@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link type="text/css" rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Domcontentloaded
+
+        function ready() {
+          alert('DOM is ready');
+          // image is not yet loaded (unless was cached), so the size is 0x0
+          alert(<code data-enlighter-language="generic" class="EnlighterJSRAW">Image size: ${img.offsetWidth}x${img.offsetHeight}</code>);
+        }
+        document.addEventListener("DOMContentLoaded", ready);
+      </script>
+      <img id="img" src="https://en.js.cx/clipart/train.gif?speed=1&cache=0">
+
+    
+<script>
+    //Documentloaded and styles
+  // the script doesn't not execute until the stylesheet is loaded
+  alert(getComputedStyle(document.body).marginTop);
+</script>
+</body>
+</html>
