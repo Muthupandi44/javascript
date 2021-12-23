@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>Document</title>
+</head>
+<body>
+    <form name="myform">
+        First name = <input type="text"   name="fst">
+         <br><br>
+        Second name = <input type="text" name="snd">
+         <br><br>
+         Result = <input type="text"  name="result" >
+         <br><br>
+         <input type="button"  value="click" onclick="add()">
+         
+     </form>
+     <script>
+   function add() {
+       fst=Object(myform.fst.value);
+       snd=Object(myform.snd.value);
+       result=fst+ " " + snd;
+       myform.result.value=result;
+   }
+     </script>
+</body>
+</html>

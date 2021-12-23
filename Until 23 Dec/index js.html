@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <title>Document</title>
+</head>
+<body>
+    <form name="myform">
+       Firstnumber = <input type="text" name="fst">
+        <br><br>
+       Secondnumber = <input type="text" name="snd">
+        <br><br>
+        Result = <input type="text" name="result">
+        <br><br>
+        <input type="button"  value="ADD" onclick="add()">
+        <input type="button"  value="Subtract" onclick="sub()">
+        <br><br>
+        
+    </form>
+    <script>
+function add() {
+    fst=parseInt(myform.fst.value);
+    snd=parseInt(myform.snd.value);
+    result=fst+snd;
+    myform.result.value=result;
+}
+function sub() {
+    fst=parseInt(myform.fst.value);
+    snd=parseInt(myform.snd.value);
+    result=fst-snd;
+    myform.result.value=result;
+}
+    </script>
+</body>
+</html>

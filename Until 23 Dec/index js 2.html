@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Form validation</title>
+</head>
+<body>
+        <div class="p-3 mb-2 bg-warning text-dark">
+            <div class="container">
+           <div class="row">
+                <div class="col-6">
+           
+        <h2>REGISTRATION FORM</h2>
+    <form name="myform" onsubmit="return validation()" method="post" >
+    <table > 
+  
+    
+    <tr>
+        <td>Company Name :</td>
+        <td> <input type="text" id="cname" placeholder="Enter Company Name" ></td>
+   </tr>
+     <tr>
+         <td>First Name :</td>
+         <td> <input type="text" id="fname" placeholder="Enter First Name" ></td>
+    </tr>
+     <tr>
+         <td>Second Name :</td>
+         <td> <input type="text" id="sname" placeholder="Enter Second Name" ></td>
+    </tr>
+    
+    <tr>
+         <td> city :</td>
+         <td><input type="text" id="cit" placeholder="Enter City"></td>
+    </tr>
+    <tr>
+       <td>state : </td>
+        <td><input type="text" id="stat" placeholder="Enter State"></td>
+    </tr>
+    <tr>
+        <td> email : </td>
+        <td><input type="email" id="mail" placeholder="Enter E-mail"> </td>
+    </tr>
+    <tr>
+        <td> Phone : </td>
+        <td><input type="number" id="ph" placeholder="Enter Ph-number"> </td>
+    </tr>
+    <tr>
+        <td> Address : </td>
+        <td><input type="text" id="add" placeholder="Enter Address"> </td>
+    </tr>
+    <tr>
+        <td>password : </td>
+        <td><input type="password" id="pass" placeholder="Enter password"> </td>
+    </tr>
+    <tr>
+        <td><input type="submit" id="sub" class="bg-danger"> </td>
+    </tr>
+
+</table>
+    </form>
+</div>
+
+        <script>
+            function validation() 
+            {
+                cname = document.getElementById("cname").value;
+                fname = document.getElementById("fname").value;
+                sname = document.getElementById("sname").value;
+
+                cit = document.getElementById("cit").value;
+                stat = document.getElementById("stat").value;
+                mail = document.getElementById("mail").value;
+                ph = document.getElementById("ph").value;
+                add = document.getElementById("add").value;
+                pass = document.getElementById("pass").value;
+
+                if(cname == "")
+                {
+                    alert(" please! Enter the Company Name");
+                }
+                else if(fname = "")
+                {
+                    alert(" please! Enter the First Name");
+                }
+                else if(sname == "")
+                {
+                    alert("please! Enter the Second Name");
+                }
+                else if(cit == "")
+                {
+                    alert("please! Enter the City");
+                }
+                else if(stat == "")
+                {
+                    alert("please! Enter the State");
+                }
+                else if(mail == "")
+                {
+                    alert("please! Enter the Email");
+                }
+                else if(ph == "")
+                {
+                    alert("please! Enter the Phone Number");
+                }
+                else if(add == "")
+                {
+                    alert("please! Enter the Address");
+                }
+                else if(pass == "")
+                {
+                    alert("please! Enter the password");
+                }
+            
+            }
+
+        </script>
+<!--col
+
+ <div class="col-6">
+           
+        <h2>REGISTRATION FORM</h2>
+    <form name="myform1" onsubmit="return validation1()" method="post" >
+   
+  
+    
+        <p>Company Name:</p>
+        <input type="text" name="cname1" id="cname1" value="" >
+        <span class="error"><p id="cname1_error"></p></span>
+
+        <p>First Name:</p>
+        <input type="text" name="fname1" id="fname1" value="" >
+        <span class="error"><p id="fname_error"></p></span>
+
+        <p>Second Name:</p>
+        <input type="text" name="sname1" id="sname1" value="" >
+        <span class="error"><p id="sname_error"></p></span>
+
+        <p>Email:</p>
+        <input type="email" name="mail1" id="mail1" value="" >
+        <span class="error"><p id="mail1_error"></p></span>
+
+        <p>Phone Number:</p>
+        <input type="number" name="ph1" id="ph1" value="" >
+        <span class="error"><p id="ph1_error"></p></span>
+
+        <p>Address:</p>
+        <input type="address" name="add1" id="add1" value="" >
+        <span class="error"><p id="add1_error"></p></span>
+        
+        <p> Password:</p>
+        <input type="password" name="pass1" id="pass1" value="" >
+        <span class="error"><p id="pass1_error"></p></span>
+
+        <input type="submit" name="submit" value="submit">
+
+    </form>
+</div>
+
+        <script>
+            https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js
+           (document).ready(function ()
+           {
+            ("submit").click(function()
+           {
+               var a=('#cname1').val();
+               var b=('#fname1').val();
+               var c=('#sname1').val();
+               var d=('#mail1').val();
+               var e=('#ph1').val();
+               var f=('#add1').val();
+               var g=('#pass1').val();
+               var submit = true;
+
+               if(a.length==0)
+               {
+                   ('#cname1_error').html("please enter your company name");
+                submit=false;
+               }
+               if(b.length==0)
+               {
+                   ('#fname1_error').html("please enter your first name");
+                submit=false;
+               }
+               if(c.length==0)
+               {
+                   ('#sname1_error').html("please enter your second name");
+                submit=false;
+               }
+               if(d.length==0)
+               {
+                   ('#mail1_error').html("please enter your E-mail");
+                submit=false;
+               }
+               if(e.length==0)
+               {
+                   ('#ph1_error').html("please enter your Phone Number");
+                submit=false;
+               }
+               if(f.length==0)
+               {
+                   ('#add1_error').html("please enter your Address");
+                submit=false;
+               }
+               if(g.length==0)
+               {
+                   ('#pass1_error').html("please enter your Password");
+                submit=false;
+               }
+
+                return submit;
+              });
+
+              ('#cname1').on('keyup focus',function () {
+                  validatecname1();
+              });
+
+              function validatecname1() 
+              {
+              var a=('#cname1').val();
+              if(a.length==0)
+              {
+                  ('#cname1_error').html("please  enter your company name")
+              }    
+              else
+              {
+                  ('#cname1_error').html("");
+              }
+              }
+
+              ('#fname1').on('keyup focus',function () {
+                  validatefname1();
+
+
+
+           });
+        </script>-->
+</div>
+</div>
+</div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <title>Document</title>
+</head>
+<body>
+    <body>
+
+               <form name="student_reg" method="POST" action="" onsubmit="return validateForm()">
+                       <p>NAME:</p>
+                       <input type="text" name="name" value="" >
+                       <span class="error"><p id="name_error"></p></span>
+       
+                       <p>EMAIL:</p>
+                       <input type="text" name="email" value="" >
+                       <span class="error"><p id="email_error"></p></span>
+       
+                       <p>USERNAME:</p>
+                       <input type="text" name="username" value="" >
+                       <span class="error"><p id="username_error"></p></span>
+       
+                       <p>PASSWORD:</p>
+                       <input type="password" name="password" value="" >
+                       <span class="error"><p id="password_error"></p></span>
+       
+                       <p>ROLL NO:</p>
+                       <input type="number" name="roll_no" value="" >
+                       <span class="error"><p id="roll_no_error"></p></span>
+                       <br/>
+                       <br/>
+                       <br/>
+       
+                       <input type="submit" name="submit" value="submit">
+       
+        </form>
+        <script>
+            function validateForm() {
+    var error = 0;
+    var a = document.forms["student_reg"]["name"].value;
+    document.getElementById('name_error').innerHTML = '';
+    if ( a == "") {
+        // alert("Name must be filled out");
+        
+        document.getElementById('name_error').innerHTML = 'Name must be filled out';
+    }
+
+    var b = document.forms["student_reg"]["email"].value;
+    document.getElementById('email_error').innerHTML = '';
+    if (b == null || b == "") {
+        // alert("Email must be filled out");
+        error++;
+        document.getElementById('email_error').innerHTML = 'Email must be filled out';
+    }
+
+    var c = document.forms["student_reg"]["username"].value;
+    document.getElementById('username_error').innerHTML = '';
+    if (c == null || c == "") {
+        // alert("Username must be filled out");
+        error++;
+        document.getElementById('username_error').innerHTML = 'Username must be filled out';
+    }
+
+    var d = document.forms["student_reg"]["password"].value;
+    document.getElementById('password_error').innerHTML = '';
+    if (d == null || d == "") {
+        // alert("Password must be filled out");
+        error++;
+        document.getElementById('password_error').innerHTML = 'Password must be filled out';
+    }
+
+    var e = document.forms["student_reg"]["roll_no"].value;
+    document.getElementById('roll_no_error').innerHTML = '';
+    if (e == null || e == "") {
+        // alert("Roll no must be filled out");
+        error++;
+        document.getElementById('roll_no_error').innerHTML = 'Roll no must be filled out';
+    }
+
+    if(error>0) {
+        return false;
+    }
+    return true;
+}
+        </script>
+        </body>
+</body>
+</html>
