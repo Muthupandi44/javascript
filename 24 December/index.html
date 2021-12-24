@@ -13,8 +13,25 @@
           // image is not yet loaded (unless it was cached), so the size is 0x0
           alert(`Image size: ${img.offsetWidth}x${img.offsetHeight}`);
         }
+
+        function getBeforeUnload() {
+            console.log("getBeforeUnload");
+            confirm('getBeforeUnload');
+        }
+
+        function getUnload() {
+            console.log("getUnload");
+            confirm('getUnload');
+        }
+
       
         document.addEventListener("DOMContentLoaded", ready);
+        window.unload = function() {
+          getUnload();
+        };
+        window.beforeunload = function() {
+          getBeforeUnload();
+        };
       </script>
       
       <img id="img" src="https://en.js.cx/clipart/train.gif?speed=1&cache=0">
@@ -41,10 +58,10 @@
 
          <script>
              //ready state
-            log('initial readyState:' + document.readyState);
+            // log('initial readyState:' + document.readyState);
           
-            document.addEventListener('readystatechange', () => log('readyState:' + document.readyState));
-            document.addEventListener('DOMContentLoaded', () => log('DOMContentLoaded'));
+            // document.addEventListener('readystatechange', () => log('readyState:' + document.readyState));
+            // document.addEventListener('DOMContentLoaded', () => log('DOMContentLoaded'));
           
             window.onload = () => log('window onload');
           </script>
