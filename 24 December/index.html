@@ -6,6 +6,20 @@
 </head>
 <body>
     <script>
+        //DOMcontentloaded
+        function ready() {
+          alert('DOM is ready');
+      
+          // image is not yet loaded (unless it was cached), so the size is 0x0
+          alert(`Image size: ${img.offsetWidth}x${img.offsetHeight}`);
+        }
+      
+        document.addEventListener("DOMContentLoaded", ready);
+      </script>
+      
+      <img id="img" src="https://en.js.cx/clipart/train.gif?speed=1&cache=0">
+      
+    <script>
         //windows.onload
         window.onload = function() { // can also use window.addEventListener('load', (event) => {
           alert('Page loaded');
@@ -17,20 +31,32 @@
       
       <img id="img" src="https://en.js.cx/clipart/train.gif?speed=1&cache=0">
 
+     
       <script>
-        log('initial readyState:' + document.readyState);
-      
-        document.addEventListener('readystatechange', () => log('readyState:' + document.readyState));
-        document.addEventListener('DOMContentLoaded', () => log('DOMContentLoaded'));
-      
-        window.onload = () => log('window onload');
-      </script>
-      
-      <iframe src="iframe.html" onload="log('iframe onload')"></iframe>
-      
-      <img src="http://en.js.cx/clipart/train.gif" id="img">
-      <script>
-        img.onload = () => log('img onload');
-      </script>
+        //window.onbeforeunload
+        window.onbeforeunload = function() {
+        return false;
+      };
+        </script>
+
+         <script>
+             //ready state
+            log('initial readyState:' + document.readyState);
+          
+            document.addEventListener('readystatechange', () => log('readyState:' + document.readyState));
+            document.addEventListener('DOMContentLoaded', () => log('DOMContentLoaded'));
+          
+            window.onload = () => log('window onload');
+          </script>
+          
+          <iframe src="iframe.html" onload="log('iframe onload')"></iframe>
+          
+          <img src="http://en.js.cx/clipart/train.gif" id="img">
+          <script>
+            img.onload = () => log('img onload');
+          </script>
+        
+
+
 </body>
 </html>
