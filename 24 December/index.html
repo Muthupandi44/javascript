@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //windows.onload
+        window.onload = function() { // can also use window.addEventListener('load', (event) => {
+          alert('Page loaded');
+      
+          // image is loaded at this time
+          alert(`Image size: ${img.offsetWidth}x${img.offsetHeight}`);
+        };
+      </script>
+      
+      <img id="img" src="https://en.js.cx/clipart/train.gif?speed=1&cache=0">
+
+      <script>
+        log('initial readyState:' + document.readyState);
+      
+        document.addEventListener('readystatechange', () => log('readyState:' + document.readyState));
+        document.addEventListener('DOMContentLoaded', () => log('DOMContentLoaded'));
+      
+        window.onload = () => log('window onload');
+      </script>
+      
+      <iframe src="iframe.html" onload="log('iframe onload')"></iframe>
+      
+      <img src="http://en.js.cx/clipart/train.gif" id="img">
+      <script>
+        img.onload = () => log('img onload');
+      </script>
+</body>
+</html>
