@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    
+
+  
+
+    <h1>My First JavaScript Animation</h1>
+    
+    <div id="animation">My animation will go here</div>
+    
+    <h1 id="id1">My Heading 1</h1>
+
+    <button type="button" 
+onclick="document.getElementById('id1').style.color = 'red'">
+Click Me!</button> 
+    
+    <p id="p1">Hello World!</p>
+    <p id="p2">Hello World!</p>
+
+        <input id="numb">
+
+<button type="button" onclick="myFunction()">Submit</button>
+
+<p id="demo"></p>
+        <form name="myForm"  onsubmit="return validateForm()" method="post">
+    Name: <input type="text" name="fname">
+    <input type="submit" value="Submit">
+  </form>
+        
+        <p id="intro">Finding HTML Elements by Id</p>
+    <p id="elem">Finding HTML Elements by tagname</p>
+
+<p>This example demonstrates the <b>getElementsById</b> method.</p>
+
+<div id = "main">
+    <p>Finding HTML Elements by Tag Name</p>
+<p>This example demonstrates the <b>getElementsByTagName</b> method.</p>
+</div>
+
+<p class="intro">Hello World!</p>
+<p class="intro">This example demonstrates the <b>getElementsByClassName</b> method.</p>
+
+<p class="intro1">Hello World!.</p>
+<p class="intro1">This example demonstrates the <b>querySelectorAll</b> method.</p>
+
+
+<p id="demo1"></p>
+    <p id="demo"></p>
+    <p id="p1">Hello World!</p>
+
+    <h1 id="id01">Old Heading</h1>
+    <img id="image" src="./images/photo-1631019553258-043d88ef767b.jfif" alt="Lion" width="200" height="200">
+    <p id="demo"></p>-->
+
+<script>
+   const element = document.getElementById("intro");
+
+document.getElementById("demo1").innerHTML = 
+"The text from the intro paragraph is: " + element.innerHTML;
+
+document.getElementById("demo").innerHTML = "Hello World!";
+
+var elem = document.getElementsByTagName("p");
+
+document.getElementById("elem").innerHTML = 'The text in first paragraph (index 0) is: ' + elem[0].innerHTML;
+
+const x = document.getElementById("main");
+const y = x.getElementsByTagName("p");
+
+document.getElementById("demo").innerHTML = 
+'The first paragraph (index 0) inside "main" is: ' + y[0].innerHTML;
+
+var a = document.getElementsByClassName("intro");
+document.getElementById("demo").innerHTML = 
+'The first paragraph (index 0) with class="intro" is: ' + a[0].innerHTML;
+
+var b = document.querySelectorAll("p.intro1");
+document.getElementById("demo").innerHTML = 
+'The first paragraph (index 0) with class="intro" is: ' + b[0].innerHTML; 
+
+
+document.getElementById("p1").innerHTML = "New text!";
+const element = document.getElementById("id01");
+element.innerHTML = "New Heading";
+document.getElementById("image").src = "";
+document.getElementById("demo").innerHTML = "Date :" +  Date();
+document.write(Date());
+function validateForm() {
+  let x = document.forms["myForm"]["fname"].value;
+  if (x == "") {
+    alert("Name must be filled out");
+    return false;
+  }
+}
+
+document.getElementById("p2").style.color = "blue";
+document.getElementById("p2").style.fontFamily = "Arial";
+document.getElementById("p1").style.fontSize = "larger";
+ 
+
+</script>
+
+
+
+</body>
+</html>
