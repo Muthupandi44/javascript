@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+   <style>
+#myDiv1, #myDiv2 {
+  background-color: coral;
+  padding: 50px;
+}
+
+#myP1, #myP2 {
+  background-color: white; 
+  font-size: 20px;
+  border: 1px solid;
+  padding: 20px;
+}
+</style>
+<body >
+
+ <h1 onclick="this.innerHTML = 'Ooops!'">Click on this text!</h1>
+<h2 onclick="changeText(this)">Click on this text!</h2>
+<button onclick="displayDate()">click This</button> 
+<button id="myBtn">Try it</button>
+<input type="text" id="demo" onchange=" upperCase()">
+ 
+<button id="myBtn">click</button>
+<p id="demo"></p> 
+<h2>JavaScript addEventListener()</h2>
+
+<div id="myDiv1">
+  <h2>Bubbling:</h2>
+  <p id="myP1">Click me!</p>
+</div><br>
+
+<div id="myDiv2">
+  <h2>Capturing:</h2>
+  <p id="myP2">Click me!</p>
+</div> 
+<h1 id="id01">My First Page</h1>
+<p id="id02"></p>-->
+<p>Hello World!</p>
+
+<p>Hello Norway!</p>
+
+<p>Hi this is Muthupandi</p>
+<button onclick="myFunction()">Click</button>
+
+<script>
+function myFunction() {
+  const myCollection = document.getElementsByTagName("p");
+  for (let i = 0; i < myCollection.length; i++) {
+    myCollection[i].style.color = "red";
+  }
+}
+document.getElementById("id02").innerHTML = document.getElementById("id01").nodeName;
+document.getElementById("myP1").addEventListener("click", function() {
+  alert("You clicked the white element!");
+}, false);
+
+document.getElementById("myDiv1").addEventListener("click", function() {
+  alert("You clicked the orange element!");
+}, false);
+
+document.getElementById("myP2").addEventListener("click", function() {
+  alert("You clicked the white element!");
+}, true);
+
+document.getElementById("myDiv2").addEventListener("click", function() {
+  alert("You clicked the orange element!");
+}, true);
+
+   var x = document.getElementById("myBtn");
+x.addEventListener("mouseover", myFunction);
+x.addEventListener("mouseout", myFunction2);
+x.addEventListener("click", myFunction3);
+
+function myFunction() {
+    document.getElementById("demo").innerHTML += "Moused over!<br>";
+}
+
+function myFunction2() {
+    document.getElementById("demo").innerHTML += "Moused out!<br>";
+}
+function myFunction3(){
+    document.getElementById("demo").innerHTML += "clicked!<br>";
+}
+    function changeText(id) {
+      id.innerHTML = "Ooops!";
+    }
+    function displayDate(){
+        document.getElementById("demo").innerHTML = Date();
+    }
+    document.getElementById("myBtn").onclick = displayDate;
+
+function displayDate() {
+  document.getElementById("demo").innerHTML = Date();
+}
+function checkCookies() {
+  var text = "";
+  if (navigator.cookieEnabled == true) {
+    text = "Cookies are enabled.";
+  } else {
+    text = "Cookies are not enabled.";
+  }
+  document.getElementById("demo").innerHTML = text;
+}
+function upperCase() {
+  const x = document.getElementById("demo");
+  x.value = x.value.toUpperCase();
+}
+    </script>
+
+</body>
+</html>
