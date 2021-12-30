@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <!-- <input type="text" id="name" onblur="myFunction()"> 
+
+     <form>
+        Choose which browser you prefer:
+          <select id="browsers" onchange="preferedBrowser()">
+            <option value="Chrome">Chrome</option>
+            <option value="Internet Explorer">Internet Explorer</option>
+            <option value="Firefox">Firefox</option>
+          </select>
+        </form> 
+
+         Enter your name: <input type="text" onfocus="myFunction(this)"> 
+          <input type="text" value="Hello world!" onselect="myFunction()">
+         <p id="demo"></p> -->
+         <!-- <form onsubmit="confirmInput()" action="https://www.w3schools.com/">
+            Enter your name: <input id="fname" type="text" size="15">
+            <input type="submit" >
+          </form> 
+           <form onreset="message()">
+            Enter your name: <input type="text" size="20">
+            <input type="reset">
+          </form> 
+          <input type="text" onkeydown="myFunction()">
+          <input type="text" id="fname" onkeyup="myFunction()">
+          <form>
+            Enter your name:
+            <input type="text" name="myInput" onkeyup="writeMessage()" size="20">
+            <input type="text" name="mySecondInput" size="20">
+          </form>
+          
+<form>
+    Write a message:<br>
+    <input type="text" onkeydown="color('yellow')"onkeyup="color('white')"name="myInput">
+</form>
+<button onclick="myFunction()">Click me</button>
+<p id="demo"></p>
+<p ondblclick="myFunction()">Doubleclick this paragraph to trigger a function.</p>
+
+<p id="demo"></p>-->
+<a id="myAnchor" href="https://www.w3schools.com">Tutorials</a>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+          
+    <script>
+        // function myFunction() {
+        //   var x = document.getElementById("name");
+        //   x.value = x.value.toUpperCase();
+        // }
+//         function preferedBrowser() {
+//   prefer = document.forms[0].browsers.value;
+//   alert("You prefer browsing internet with " + prefer);
+// }
+// function myFunction(x) {
+//   x.style.background = "blue";
+// }
+// function myFunction() {
+//   document.getElementById("demo").innerHTML = "You selected some text";
+// }
+// function confirmInput() {
+//   fname = document.forms[0].fname.value;
+//   alert("Hello " + fname + "! You will now be redirected to www.w3Schools.com");
+// }
+// function message() {
+//   alert("This alert box was triggered by the onreset event handler");
+// }
+// function myFunction() {
+//   alert("You pressed a key inside the input field");
+// }
+// function myFunction() {
+//   var x = document.getElementById("fname");
+//   x.value = x.value.toUpperCase();
+// }
+// function writeMessage() {
+//   document.forms[0].mySecondInput.value = document.forms[0].myInput.value;
+// }
+// function color(color) {
+//   document.forms[0].myInput.style.background = color;
+// }
+// function myFunction() {
+//   document.getElementById("demo").innerHTML = "Hello World";
+// }
+
+// function myFunction() {
+//   document.getElementById("demo").innerHTML = "Hello World";
+// }
+function myFunction() {
+  var x = document.getElementById("myAnchor").href;
+  document.getElementById("demo").innerHTML = x;
+}
+</script>
+</body>
+</html>
