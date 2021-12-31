@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>DOM task1</title>
+</head>
+<style>
+    table, td, th{
+  border: 1px solid black;
+}
+</style>
+<body>
+    <form onFormSubmit()>
+        <label for="name" >Name :</label>
+        <input type="text" id="name">
+        <br><br>
+        <label for="Age" >Age :</label>
+        <input type="number" id="Age">
+        <br><br>
+        <label for="Gender" >Gender :</label>
+        <input type="text" id="Gender">
+        <br><br>
+        <label for="Address" >Address :</label>
+        <input type="Address" id="Address">
+        <br><br>
+        <button>Submit</button>
+    </form>
+    <br><br>
+    <table>
+        <thead>
+            <tr>
+                <th>NAME</th>
+                <th>AGE</th>
+                <th>GENDER</th>
+                <th>ADDRESS</th>
+            </tr>
+        </thead>
+    </table>
+    <script>
+        var selectedRow = null;
+        
+         function onFormSubmit(){
+            if(validate()){
+                var formData = readformdata();
+                if(selectedRow==null){
+                    insertnewrecord(formData);
+                }
+                else{}
+                resetform();
+            }
+         }
+    </script>
+</body>
+</html>
