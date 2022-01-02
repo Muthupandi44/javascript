@@ -3,51 +3,122 @@
 <head>
     <title>DOM task1</title>
 </head>
-<style>
-    table, td, th{
-  border: 1px solid black;
-}
-</style>
 <body>
-    <form onFormSubmit()>
-        <label for="name" >Name :</label>
-        <input type="text" id="name">
-        <br><br>
-        <label for="Age" >Age :</label>
-        <input type="number" id="Age">
-        <br><br>
-        <label for="Gender" >Gender :</label>
-        <input type="text" id="Gender">
-        <br><br>
-        <label for="Address" >Address :</label>
-        <input type="Address" id="Address">
-        <br><br>
-        <button>Submit</button>
-    </form>
-    <br><br>
     <table>
-        <thead>
-            <tr>
-                <th>NAME</th>
-                <th>AGE</th>
-                <th>GENDER</th>
-                <th>ADDRESS</th>
-            </tr>
-        </thead>
+        <tr>
+            <td>
+                <form onsubmit="OnFormSubmit()" autocomplete="off">
+                    <div>
+                        <label for="name">Name :</label>
+                        <input type="text" name="Name" id="name">
+                    </div>
+                    <br>
+                    <div>
+                        <label for="age">Age :</label>
+                        <input type="number" name="Age" id="age">
+                    </div>
+                    <br>
+                    <div>
+                        <label for="gender">Gender :</label>
+                        <input type="text" name="Gender" id="gender">
+                    </div>
+                    <br>
+                    <div>
+                        <label for="address">Address :</label>
+                        <input type="address" name="Address" id="address">
+                    </div>
+                    <br>
+                    <div>
+                        <input type="Submit" value="Submit">
+                    </div>
+                </form>
+                <td>
+                    <table id="myTable" style="border: 1px solid black; background-color: aqua;" >
+                        <thead>
+                            <tr>
+                                <th>NAME</th>
+                                <th>AGE</th>
+                                <th>GENDER</th>
+                                <th>ADDRESS</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </td>
+            </td>
+        </tr>
     </table>
+
     <script>
         var selectedRow = null;
-        
-         function onFormSubmit(){
-            if(validate()){
-                var formData = readformdata();
-                if(selectedRow==null){
-                    insertnewrecord(formData);
-                }
-                else{}
-                resetform();
+        function OnFormSubmit(){
+            event.preventDefault();
+            var formdata = readFormData();
+            if(selectedRow === null){
+                insertNewRecord(formdata);
             }
-         }
+            else{
+                updateRecord(formdata);
+            }
+            resetForm();
+        }
+    
+
+        function readFormData(){
+            var formdata = {};
+            formdata["name"] = document.getElementById("name").value;
+            formdata["age"] = document.getElementById("age").value;
+            formdata["gender"] = document.getElementById("gender").value;
+            formdata["address"] = document.getElementById("address").value;
+            return  formdata;
+        }
+
+        function insertNewRecord(data){
+            var table = document.getElementById("myTable").getElementsByTagName('tbody')[0];
+            var newRow = table.insertRow(table.length);
+            var cell1 = newRow.insertCell(0);
+                cell1.innerHTML = data.name;
+            var cell2 = newRow.insertCell(1);
+                cell2.innerHTML = data.age;
+            var cell3 = newRow.insertCell(2);
+                cell3.innerHTML = data.gender;
+            var cell4 = newRow.insertCell(3);
+                cell4.innerHTML = data.address;
+            var cell5 = newRow.insertCell(4);
+                cell5.innerHTML = '<button onClick = "onEdit(this)" > Edit </button> <button onClick = "onDelete(this)" > Delete </button>';
+        }
+
+        function onEdit(td){
+            selectedRow = td.parentElement.parentElement;
+    document.getElementById("name").value = selectedRow.cells[0].innerHTML;
+    document.getElementById("age").value = selectedRow.cells[1].innerHTML;
+    document.getElementById("gender").value = selectedRow.cells[2].innerHTML;
+    document.getElementById("address").value = selectedRow.cells[3].innerHTML;
+   
+}
+        function updateRecord(formData) {
+    selectedRow.cells[0].innerHTML = formData.name;
+    selectedRow.cells[1].innerHTML = formData.age;
+    selectedRow.cells[2].innerHTML = formData.gender;
+    selectedRow.cells[3].innerHTML = formData.address;
+}
+
+function onDelete(td) {
+    if (confirm('Are you sure to delete this record ?')) {
+        row = td.parentElement.parentElement;
+        document.getElementById("myTable").deleteRow(row.rowIndex);
+        resetForm();
+    }
+}
+function resetForm() {
+    document.getElementById("name").value = "";
+    document.getElementById("age").value = "";
+    document.getElementById("gender").value = "";
+    document.getElementById("address").value = "";
+    selectedRow = null;
+}
     </script>
 </body>
 </html>
