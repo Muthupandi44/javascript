@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <!-- Datatypes -->
+    <p>The dollar sign is treated as a letter in JavaScript names.</p>
+    <p id="demo"></p>
+
+<script>
+    const person = {
+  firstName: "John",
+  lastName: "Doe",
+  id: 5566,
+  fullName: function() {
+    return this.firstName + " " + this.lastName;
+  }
+};
+document.getElementById("demo").innerHTML = person.fullName;
+//     const car = {type:"Fiat", model:"500", color:"white"};
+// document.getElementById("demo").innerHTML = "The car type is " + car.type;
+//     let text = ""
+// let i = 0;
+
+// do {
+//   text += "<br>The number is " + i;
+//   i++;
+// }
+// while (i < 10);  
+
+// document.getElementById("demo").innerHTML = text;
+//     let text = "";
+// let i = 0;
+// while (i < 10) {
+//   text += "<br>The number is " + i;
+//   i++;
+// }
+// document.getElementById("demo").innerHTML = text;
+//     let language = "JavaScript";
+
+// let text = "";
+// for (let x of language) {
+//   text += x + "<br>";
+// }
+
+// document.getElementById("demo").innerHTML = text;
+//     const numbers = [45, 4, 9, 16, 25];
+
+// let txt = "";
+// numbers.forEach(myFunction);
+// document.getElementById("demo").innerHTML = txt;
+
+// function myFunction(value) {
+//   txt += value + "<br>"; 
+// }
+//     const numbers = [45, 4, 9, 16, 25];
+
+// let txt = "";
+// for (let x in numbers) {
+//   txt += numbers[x] + "<br>"; 
+// }
+
+// document.getElementById("demo").innerHTML = txt;
+//     let text = "";
+
+// for (let i = 0; i < 5; i++) {
+//   text += "The number is " + i + "<br>";
+// }
+
+// document.getElementById("demo").innerHTML = text;
+//     const cars = ["BMW", "Volvo", "Saab", "Ford", "Fiat", "Audi"];
+
+// let text = "";
+// for (let i = 0; i < cars.length; i++) {
+//   text += cars[i] + "<br>";
+// }
+
+// document.getElementById("demo").innerHTML = text;
+//     let day;
+// switch (new Date().getDay()) {
+//     case 6:
+//     day = "Saturday";
+//     break;
+//   case 0:
+//     day = "Sunday";
+//     break;
+//  default: 
+//  text = "Looking forward to the Weekend";
+    
+// }
+// document.getElementById("demo").innerHTML =text;
+//     const hour = new Date().getHours(); 
+// let greeting;
+
+// if (hour < 8) {
+//   greeting = "Good day";
+
+// } 
+// else if(hour <18){
+//     greeting = "Good morning"
+// }
+// else {
+//   greeting = "Good evening";
+// }
+
+// document.getElementById("demo").innerHTML = greeting;
+//     if (new Date().getHours() < 18) {
+//   document.getElementById("demo").innerHTML = "Good day!";
+// }
+//     let $$$ = 2;
+// let $myMoney = 5;
+// document.getElementById("demo").innerHTML = $$$ + $myMoney;
+//     let car = "";
+// document.getElementById("demo").innerHTML =
+// "The value is: " +
+// car + "<br>" +
+// "The type is: " + typeof car;
+//     const person = {
+//   firstName : "John",
+//   lastName  : "Doe",
+//   age     : 50,
+//   eyeColor  : "blue"
+// };
+
+// document.getElementById("demo").innerHTML =
+// person.firstName + " is " + person.age + " years old.";
+//     let x = 5;
+// let y = 5;
+// let z = 6;
+
+// document.getElementById("demo").innerHTML =
+// (x == y) + "<br>" + (x == z);
+//     let y = 123e5;
+//     let z = 123e-5;
+
+// document.getElementById("demo").innerHTML =
+// y + "<br>" + z;
+
+//     let answer1 = "It's alright";
+// let answer2 = "He is called 'Johnny'";
+// let answer3 = 'He is called "Johnny"';
+
+// document.getElementById("demo").innerHTML =
+// answer1 + "<br>" + 
+// answer2 + "<br>" + 
+// answer3;
+// let x =   16 + 4 + "Volvo";
+// document.getElementById("demo").innerHTML = x;
+
+// let y = "Volvo" + 16 + 4;
+// document.getElementById("demo").innerHTML = y;
+</script>
+</body>
+</html>
