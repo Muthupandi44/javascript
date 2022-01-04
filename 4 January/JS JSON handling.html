@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+ <body>
+     
+    <p id="demo"></p>
+    <script>
+        const obj = {name: "John", age: function () {return 30;}, city: "New York"};
+obj.age = obj.age.toString();
+const myJSON = JSON.stringify(obj);
+document.getElementById("demo").innerHTML = myJSON;
+        const obj = {name: "John", age: function () {return 30;}, city: "New York"};
+const myJSON = JSON.stringify(obj);
+document.getElementById("demo").innerHTML = myJSON;
+        const obj = {name: "John", today: new Date(), city: "New York"};
+const myJSON = JSON.stringify(obj);
+document.getElementById("demo").innerHTML = myJSON;
+        // Storing data:
+const myObj = { name: "John", age: 31, city: "New York" };
+const myJSON = JSON.stringify(myObj);
+localStorage.setItem("testJSON", myJSON);
+
+// Retrieving data:
+let text = localStorage.getItem("testJSON");
+let obj = JSON.parse(text);
+document.getElementById("demo").innerHTML = obj.name;
+        const arr = ["John", "Peter", "Sally", "Jane"];
+const myJSON = JSON.stringify(arr);
+document.getElementById("demo").innerHTML = myJSON;
+        const obj = {name: "John", age: 30, city: "New York"};
+const myJSON = JSON.stringify(obj);
+document.getElementById("demo").innerHTML = myJSON;
+        const text = '{"name":"John", "age":"function() {return 30;}", "city":"New York"}';
+const obj = JSON.parse(text);
+obj.age = eval("(" + obj.age + ")");
+document.getElementById("demo").innerHTML = obj.name + ", " + obj.age();
+        const text = '{"name":"John", "birth":"1986-12-14", "city":"New York"}';
+const obj = JSON.parse(text);
+obj.birth = new Date(obj.birth);
+document.getElementById("demo").innerHTML = obj.name + ", " + obj.birth;  
+        const text = '[ "Ford", "BMW", "Audi", "Fiat" ]';
+const myArr = JSON.parse(text);
+document.getElementById("demo").innerHTML = myArr[0];
+        const txt = '{"name":"John", "age":30, "city":"New York"}'
+const obj = JSON.parse(txt);
+document.getElementById("demo").innerHTML = obj.name + ", " + obj.age;
+        let text = '{"employees":[' +
+'{"firstName":"John","lastName":"Doe" },' +
+'{"firstName":"Anna","lastName":"Smith" },' +
+'{"firstName":"Peter","lastName":"Jones" }]}';
+
+const obj = JSON.parse(text);
+document.getElementById("demo").innerHTML =
+obj.employees[1].firstName + " " + obj.employees[1].lastName;
+    </script>
+</body>
+</html>
