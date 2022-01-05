@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Fetch API</title>
+</head>
+<body>
+    <h3>Fetch API</h3>
+    <script>
+    const url = "https://jsonplaceholder.typicode.com/posts";
+    fetch (url)
+  .then(response =>{ 
+      response.json()
+})
+  .then(data => {console.log(data)
+});
+    
+    </script>
+</body>
+</html>

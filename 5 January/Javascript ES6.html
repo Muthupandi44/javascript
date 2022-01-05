@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>JS ES6</title>
+</head>
+<body>
+    <p id="demo"></p>
+<script>
+    document.getElementById("demo").innerHTML =
+isNaN("Hello") + "<br>" + isNaN("10");
+//     document.getElementById("demo").innerHTML =
+// isFinite(10 / 0) + "<br>" + isFinite(10 / 1);
+//     document.getElementById("demo").innerHTML =
+// Number.isInteger(10) + "<br>" + Number.isInteger(10.5);
+    // document.getElementById("demo").innerHTML = Math.trunc(4.7);
+//     const numbers = [4, 9, 16, 25, 29];
+
+// document.getElementById("demo").innerHTML = "First number over 18 has index " + numbers.findIndex(myFunction);
+
+// function myFunction(value, index, array) {
+//   return value > 18;
+// }
+//     const numbers = [4, 9, 16, 25, 29];
+// let first = numbers.find(myFunction);
+
+// document.getElementById("demo").innerHTML = "First number over 18 is " + first;
+
+// function myFunction(value, index, array) {
+//   return value > 18;
+// }
+//     const fruits = ["Banana", "Orange", "Apple", "Mango"];
+// const keys = fruits.keys();
+
+// let text = "";
+// for (let x of keys) {
+//   text += x + "<br>";
+// }
+
+// document.getElementById("demo").innerHTML = text;
+//     let text = "John Doe";
+// document.getElementById("demo").innerHTML = text.endsWith("Doe");
+//     let text = "Hello world, welcome to the universe.";
+// document.getElementById("demo").innerHTML = text.startsWith("Hello");
+//     let text = "Hello world, welcome to the universe.";
+// document.getElementById("demo").innerHTML = text.includes("world");
+//     function sum(...args) {
+//   let sum = 0;
+//   for (let arg of args) sum += arg;
+//   return sum;
+// }
+
+// let x = sum(4, 9, 16, 25, 29, 100, 66, 77);
+
+// document.getElementById("demo").innerHTML = x;
+//     function myFunction(x, y = 10) {
+//   return x + y;
+// }
+// document.getElementById("demo").innerHTML = myFunction(5);
+//     const person = {
+//   firstName: "John",
+//   lastName: "Doe",
+//   age: 50,
+//   eyeColor: "blue"
+// };
+
+// let id = Symbol('id');
+// person[id] = 140353;
+
+// document.getElementById("demo").innerHTML = person[id] + " " + person.id;
+//     const myPromise = new Promise(function(myResolve, myReject) {
+//   setTimeout(function(){ myResolve("I love You !! "); }, 3000);
+// });
+
+// myPromise.then(function(value) {
+//   document.getElementById("demo").innerHTML = value;
+// });
+//     class Car {
+//   constructor(name, year) {
+//     this.name = name;
+//     this.year = year;
+//   }
+// }
+
+// const myCar = new Car("Ford", 2014);
+// document.getElementById("demo").innerHTML =
+// myCar.name + " " + myCar.year;
+    
+// const letters = new Set();
+
+// letters.add("a");
+// letters.add("b");
+// letters.add("c");
+
+// document.getElementById("demo").innerHTML = letters.size;
+//     // Create Objects
+// const apples = {name: 'Apples'};
+// const bananas = {name: 'Bananas'};
+// const oranges = {name: 'Oranges'};
+
+// // Create a new Map
+// const fruits = new Map();
+
+// // Add the Objects to the Map
+// fruits.set(apples, 500);
+// fruits.set(bananas, 300);
+// fruits.set(oranges, 200);
+
+// // Display Object Type
+// document.getElementById("demo").innerHTML = fruits;
+//     let language = "JavaScript";
+
+// let text = "";
+// for (let x of language) {
+//   text += x + "<br>";
+// }
+
+// document.getElementById("demo").innerHTML = text;
+//     const cars = ["BMW", "Volvo", "Mini"];
+
+// let text = "";
+// for (let x of cars) {
+//   text += x + "<br>";
+// }
+
+// document.getElementById("demo").innerHTML = text;
+//     const x = (x, y) => {return x * y};
+// document.getElementById("demo").innerHTML = x(5, 5);
+   
+//   let  x = 10;
+// {  
+//   let x = 2;
+// }
+// document.getElementById("demo").innerHTML = x;
+    </script>
+</body>
+</html>
