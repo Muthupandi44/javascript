@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        .container{
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+   	  div{
+   	  	padding: 10px;
+   	  }
+
+   	  input[type=text],input[type=email]{
+   	  	padding: 10px;
+   	  	border-radius: 8px;
+   	  	width: 300px;
+   	  }
+
+
+        </style>
+</head>
+<body>
+    <form id="myForm" class="container" method="post">
+		<div>
+			<strong>NAME :</strong><input type="text" name="name" id="name" placeholder="Name" required>
+		</div>
+        <br>
+		<div>
+		    <strong>GENDER :</strong><input type="text" name="gender" id="gender" placeholder="Gender" required>
+		</div>
+        <br>
+        <div>
+            <strong>EMAIL :</strong><input type="email" name="email" id="email" placeholder="Email" required>
+		</div>
+        <br>
+        <div>
+            <strong>STATUS :</strong> <input type="text" name="status" id="status" placeholder="Status" required>
+		</div>
+        <br>
+		<div>
+			<input type="submit" name="submit" class='btn btn-outline-success btn-lg ' id="addBtn" value="     AddUser     ">
+		</div>
+	</form>
+
+ <script>
+
+window.addEventListener('load', (event) => {
+
+    const addBtn = document.querySelector("#addBtn");
+
+     var Name = document.getElementById("name");
+     var Gender = document.getElementById("gender");
+     var Email = document.getElementById("email");
+     var Status = document.getElementById("status");
+
+   
+ 	addBtn.addEventListener("click", (e) => {
+      console.log("name", Name.value)
+      console.log("gender", Gender.value)
+      console.log("email", Email.value)
+      console.log("status", Status.value)
+     
+      e.preventDefault();
+       
+       fetch( "https://gorest.co.in/public/v1/users", {
+       	method:"POST",
+        headers:{
+        "Content-Type":"application/json",
+    	  "Authorization":"Bearer 096a7679c8f9ee789282864a1d5eb9d7c3d5b9b9c3ac6adc15962d8d87c76307"
+        },
+        body:JSON.stringify({
+          name:Name.value,
+          gender:Gender.value,
+          email:Email.value,
+          status:Status.value
+         })
+       })
+       .then(response => response.json())
+       .then((data) => {
+        console.log(data);
+            
+       })
+      });
+
+});
+
+
+    
+     
+ </script>
+ <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+</body>
+</html>
