@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>Document</title>
+</head>
+<body>
+    <!-- <button onclick="myFunction()">Get the name of the first local storage item</button>
+
+<p id="demo"></p>
+
+<script>
+
+function myFunction() {
+  var x = localStorage.length;
+  document.getElementById("demo").innerHTML = x;
+} 
+</script>-->
+
+<!-- <button onclick="createItem()">Create local storage item</button>
+
+<br><br>
+
+<button onclick="myFunction()">Get the item value</button>
+
+<p id="demo"></p>
+
+<script>
+
+function createItem() {
+  localStorage.mytime = Date.now();
+}
+
+function myFunction() {
+  var x = localStorage.getItem("mytime");
+  document.getElementById("demo").innerHTML = x;
+}
+
+</script> -->
+
+<!-- <button onclick="createItem()">Set local storage item</button>
+
+<br><br>
+
+<button onclick="readValue()">Get the item value</button>
+
+<p id="demo"></p>
+
+<script>
+
+function createItem() {
+  localStorage.setItem("mytime", Date.now());
+}
+
+function readValue() {
+  var x = localStorage.getItem("mytime");
+  document.getElementById("demo").innerHTML = x;
+}
+
+</script> -->
+
+
+<!-- <button onclick="createItem()">Create local storage item</button>
+<br><br>
+<button onclick="deleteItem()">Delete item</button>
+<br><br>
+<button onclick="displayItem()">Display item</button>
+
+<p id="demo"></p>
+
+<script>
+
+function createItem() {
+  localStorage.mytime = Date.now();
+}
+
+function deleteItem() {
+  localStorage.removeItem("mytime");
+}
+
+function displayItem() {
+  var x = localStorage.getItem("mytime");
+  document.getElementById("demo").innerHTML = x;
+}
+
+</script> -->
+
+<!-- <button onclick="createItems()">Create local storage items</button>
+<br><br>
+<button onclick="deleteItems()">Delete items</button>
+<br><br>
+<button onclick="displayItems()">Display items</button>
+
+<p id="demo"></p>
+
+<script>
+function createItems() {
+  localStorage.setItem("mytime", Date.now());
+  localStorage.setItem("myname", "John");
+  localStorage.setItem("myage", 36);
+}
+
+function deleteItems() {
+  localStorage.clear();
+}
+
+function displayItems() {
+  var l, i;
+  document.getElementById("demo").innerHTML = "";
+  for (i = 0; i < localStorage.length; i++) {
+  x = localStorage.key(i);
+  document.getElementById("demo").innerHTML += x + "<br>";
+  }
+} 
+</script>
+-->
+
+<!-- <p id="demo"></p>
+
+<script>
+// Set Item
+localStorage.setItem("lastname", "Smith");
+// Retrieve
+document.getElementById("demo").innerHTML = localStorage.getItem("lastname");
+</script>
+
+ -->
+
+ <!-- <p><button onclick="clickCounter()" type="button">Click me!</button></p>
+
+<p id="demo"></p>
+
+
+<script>
+clickCounter();
+
+function clickCounter() {
+  if (localStorage.clickcount) {
+    localStorage.clickcount = Number(localStorage.clickcount)+1;
+  } else {
+    localStorage.clickcount = 1;
+  }
+  document.getElementById("demo").innerHTML = localStorage.clickcount;
+}
+</script> -->
+<!-- <p id="demo"></p>
+
+<script>
+sessionStorage.setItem("lastname", "Smith");
+document.getElementById("demo").innerHTML = sessionStorage.getItem("lastname");
+</script> -->
+
+<p id="demo">0</p>
+
+<p><button onclick="clickCounter()" type="button">Count</button></p>
+
+<script>
+function clickCounter() {
+  if (sessionStorage.clickcount) {
+    sessionStorage.clickcount = Number(sessionStorage.clickcount) + 1;
+  } else {
+    sessionStorage.clickcount = 1;
+    }
+  document.getElementById("demo").innerHTML = sessionStorage.clickcount;
+}
+</script>
+
+</body>
+</html>
