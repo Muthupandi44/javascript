@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+
+<script>
+// let text = "Visit W3Schools";
+let text = "Is this all there is?";
+// let pattern = /w3schools/i;
+ let pattern = /is/g;
+let result = text.match(pattern);
+
+document.getElementById("demo").innerHTML = result;
+
+let text = "Is this all there is?";
+let pattern = /[h]/g;
+let result = text.match(pattern);
+
+document.getElementById("demo").innerHTML = result;
+
+let text = "Do you know if this is all there is?";
+let pattern = /[is]/gi; 
+let result = text.match(pattern);
+
+document.getElementById("demo").innerHTML = result;
+
+let text = "I Scream For Ice Cream, is that OK?!";
+let pattern = /[A-e]/g;
+let result = text.match(pattern);
+
+document.getElementById("demo").innerHTML=result;
+
+let text = "Is this all there is?";
+let pattern = /[^h]/g;
+let result = text.match(pattern);
+
+document.getElementById("demo").innerHTML = result;
+
+let text = "123456789";
+let pattern = /[1-9]/g;
+let result = text.match(pattern);
+
+document.getElementById("demo").innerHTML = result;
+
+let text = "re, green, red, green, gren, gr, blue, yellow";
+let pattern = /(red|green)/g;
+let result = text.match(pattern);
+
+document.getElementById("demo").innerHTML = result;
+
+let text = "That's hot!";
+let pattern = /h.t/g;
+let result = text.match(pattern);
+
+document.getElementById("demo").innerHTML = result;
+
+let text = "Give 100%!"; 
+let pattern = /\w/g;
+let result = text.match(pattern);
+
+document.getElementById("demo").innerHTML = result;
+
+let text = "Give 100%!";
+let pattern = /\W/g;
+let result = text.match(pattern);
+
+document.getElementById("demo").innerHTML = result;
+
+let text = "Give 100%!"; 
+let pattern = /\d/g;
+let result = text.match(pattern);
+
+document.getElementById("demo").innerHTML = result;
+
+let pattern = /Hello World/g;
+let text = pattern.constructor;
+
+document.getElementById("demo").innerHTML = text;
+
+let text = "Hello world!";
+
+// look for "Hello"
+let result1 = /Hello/.exec(text);
+
+// look for "W3Schools"
+let result2 = /W3Schools/.exec(text);
+
+document.getElementById("demo").innerHTML =
+result1 + "<br>" + result2;
+</script>
+
+</body>
+</html>
