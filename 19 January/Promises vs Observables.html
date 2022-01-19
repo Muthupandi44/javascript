@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+       <title>Document</title>
+</head>
+<body>
+    <script>
+
+
+       // promise
+        const numberPromise = new Promise((resolve) => {
+    resolve(5);
+    resolve(10);
+});
+
+numberPromise.then(value => console.log(value));
+// will simply prin t 5
+
+//second promise
+const secondsPromise = new Promise((resolve) => {       
+    let i = 0;
+    setInterval(() => {
+        resolve(i++);
+    }, 1000);
+});
+
+const secondsPromise = new Promise((resolve, reject, onCancel) => {
+    let i = 0; 
+    const token = setInterval(() => {
+        resolve(i++);
+    }, 1000);
+  
+    onCancel(() => clearInterval(token));
+});
+
+
+const logSecondsPromise = 
+    secondsPromise.then(value => console.log(value));
+// we print values every second 
+// (in our imaginary version of Promises), 
+// but at some point user calls:
+logSecondsPromise.cancel();
+
+// Observable
+
+const numberObservable = new Observable((observer) => {
+    observer.next(5);
+    observer.next(10);
+});
+
+numberObservable.subscribe(value => console.log(value));
+// prints 5 and 10
+
+const secondsObservable = new Observable((observer) => {       
+    let i = 0;
+    setInterval(() => {
+        observer.next(i++);
+    }, 1000);
+});
+
+secondsObservable.subscribe(value => console.log(value));
+
+const secondsObservable = new Observable((observer) => {
+    let i = 0;
+    const token = setInterval(() => {
+        observer.next(i++);
+    }, 1000);
+  
+    return () => clearInterval(token);
+});
+
+const subscription = 
+    secondsObservable.subscribe(value => console.log(value));
+
+subscription.unsubscribe();
+
+
+const observable = new Observable((observer) => {
+    observer.next(5);
+});
+
+observable.subscribe(value => console.log(value + '!'));
+
+console.log('And now we are here.');
+
+
+    </script>
+</body>
+</html>
