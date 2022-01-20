@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+   <head>
+    <!-- <script type="text/JavaScript" src="MomentJS.js"></script>
+    <script type="text/JavaScript" src="momentlocale.js" charset="UTF-8"></script> -->
+ 
+    <script src="https://momentjs.com/downloads/moment.js"></script>
+    
+<style type="text/css">
+         div {
+            margin-top: 16px!important;
+            margin-bottom: 16px!important;
+            width:100%;
+         }
+         table, td {
+            border: 1px solid #F1E8E8;
+            border-collapse: collapse;
+            padding: 4px;
+         }
+         table tr:nth-child(odd) {
+            background-color: #CFCACA;
+         }
+         table tr:nth-child(even) {
+            background-color: #C4B4B4;
+         }
+      </style>
+   </head>
+   
+   <body>
+     
+      <div>
+         <table>
+            <tr>
+               <th>Format</th>
+               <th>Display</th>
+            </tr>
+            <tr>
+               <td><i>dddd, MMMM Do YYYY, h:mm:ss a</i></td>
+               <td>
+                  <div id="ldate"></div>
+               </td>
+            </tr>
+            <tr>
+               <td><i>LLLL</i></td>
+               <td>
+                  <div id="ldate1"></div>
+               </td>
+            </tr>
+            <tr>
+               <td><i>moment().format()</i></td>
+               <td>
+                  <div id="ldate2"></div>
+               </td>
+            </tr>
+            <tr>
+               <td><i>moment().calendar()</i></td>
+               <td>
+                  <div id="ldate3"></div>
+               </td>
+            </tr>
+            <tr>
+               <td><i>Months</i></td>
+               <td>
+                  <div id="ldate4"></div>
+               </td>
+            </tr>
+            <tr>
+               <td><i>Weekdays</i></td>
+               <td>
+                  <div id="ldate5"></div>
+               </td>
+            </tr>
+            <tr>
+              <td><i>moment().endOf()day</i></td>
+              <td>
+                <div id="ldate6"></div>
+              </td>
+            </tr>
+            <tr>
+              <td><i>LTS;</i></td>
+              <td>
+                <div id="ldate7"></div>
+              </td>
+            </tr>
+         </table>
+      </div>
+
+      <script>
+        function update() {
+            var k = moment().format("dddd, MMMM Do YYYY, h:mm:ss a");
+            var k1 = moment().format("LLLL");
+            var k2 = moment().format();
+            var k3 = moment().calendar();
+            var k4 = moment.months();
+            var k5 = moment.weekdays();
+            var k6 = moment().endOf('day').fromNow();  
+            var k7 = moment().format('LTS');
+            document.getElementById("ldate").innerHTML = k;
+            document.getElementById("ldate1").innerHTML = k1;
+            document.getElementById("ldate2").innerHTML = k2;
+            document.getElementById("ldate3").innerHTML = k3;
+            document.getElementById("ldate4").innerHTML = k4;
+            document.getElementById("ldate5").innerHTML = k5;
+            document.getElementById("ldate6").innerHTML = k6;
+            document.getElementById("ldate7").innerHTML = k7;
+         };
+         update();
+
+      </script>
+   </body>
+</html>
